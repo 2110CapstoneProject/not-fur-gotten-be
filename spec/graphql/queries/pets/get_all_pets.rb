@@ -14,7 +14,7 @@ RSpec.describe Types::QueryType do
       expect(result["data"]["getAllPets"].last["name"]).to eq("Nermal")
 
       pets = Pet.all
-      expect(result.dig("data", "getAllPets")).to match_array(pets.map {|pet| {"name" => pet.name, "gender" => pet.gender} })
+      expect(result.dig("data", "getAllPets")).to match_array(pets.map {|pet| {"name" => pet.name, "gender" => pet.gender, "age" => pet.age, "description" => pet.description, "species" => pet.species, "ownerStory" => pet.owner_story, "ownerEmail" => pet.owner_email, "ownerName" => pet.owner_name } })
     end
   end
 
@@ -24,6 +24,12 @@ RSpec.describe Types::QueryType do
         getAllPets {
          name
          gender
+         age
+         description
+         species
+         ownerStory
+         ownerName
+         ownerEmail
          }
      }
      GQL
