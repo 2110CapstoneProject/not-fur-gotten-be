@@ -1,0 +1,43 @@
+type Application {
+  createdAt: ISO8601DateTime!
+  description: String
+  email: String
+  id: ID!
+  name: String
+  petId: Int
+  updatedAt: ISO8601DateTime!
+}
+
+"""
+An ISO 8601-encoded datetime
+"""
+scalar ISO8601DateTime
+
+type Mutation {
+  """
+  An example field added by the generator
+  """
+  testField: String!
+}
+
+type Pet {
+  age: Int
+  applications: [Application!]!
+  createdAt: ISO8601DateTime!
+  description: String
+  gender: String
+  id: ID!
+  name: String
+  ownerEmail: String
+  ownerName: String
+  ownerStory: String
+  species: String
+  updatedAt: ISO8601DateTime!
+}
+
+type Query {
+  application(id: ID!): Application!
+  applications: [Application!]!
+  pet(id: ID!): Pet!
+  pets: [Pet!]!
+}
