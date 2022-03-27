@@ -36,8 +36,8 @@ type Pet {
 }
 
 type Query {
-  application(id: ID!): Application!
-  applications: [Application!]!
-  pet(id: ID!): Pet!
-  pets: [Pet!]!
+  getAllApplications: [Application!]!
+  getAllPets: [Pet!]!
+  getApplicationById(id: ID!): Application!
+  getPetById(id: ID!): Pet!
 }
