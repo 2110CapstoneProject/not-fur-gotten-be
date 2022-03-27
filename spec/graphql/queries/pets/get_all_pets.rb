@@ -8,19 +8,20 @@ RSpec.describe Types::QueryType do
       pet_3 = Pet.create!(name: "Nermal", gender: "F", age: 3, description: "Gray Tabby", species: "cat", owner_story: "My owner is terminally ill with cancer and only has about 6 months to find me a home", owner_email: "lady@gmail.com", owner_name: "Ethel")
 
       result = NotFurgottenSchema.execute(query).as_json
-      
-      expect(result["data"]["pets"].count).to eq(3)
-      expect(result["data"]["pets"].first["name"]).to eq("Clifford")
 
-      # pets = Pet.all
-      # expect(result.dig("data", "pets")).to match_array(pets.map |pet| {"name" => pet.name, "gender" => pet.gender})
+      expect(result["data"]["getAllPets"].count).to eq(3)
+      expect(result["data"]["getAllPets"].first["name"]).to eq("Clifford")
+      expect(result["data"]["getAllPets"].last["name"]).to eq("Nermal")
+
+      pets = Pet.all
+      expect(result.dig("data", "getAllPets")).to match_array(pets.map {|pet| {"name" => pet.name, "gender" => pet.gender} })
     end
   end
 
   def query
      <<~GQL
      {
-        pets {
+        getAllPets {
          name
          gender
          }
