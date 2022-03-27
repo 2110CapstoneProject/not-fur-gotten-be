@@ -16,8 +16,6 @@ module Types
       Pet.find(id)
     end
 
-
-
     field :applications, [Types::ApplicationType], null: false
 
     def applications
@@ -31,6 +29,5 @@ module Types
     def application(id:)
       Application.find(id)
     end
-
   end
 end
