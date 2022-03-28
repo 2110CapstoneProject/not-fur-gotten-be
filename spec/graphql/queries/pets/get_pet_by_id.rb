@@ -22,11 +22,19 @@ RSpec.describe Types::QueryType do
       expect(result["data"]["getPetById"]["applications"][0]["name"]).to eq("Joe")
       expect(result["data"]["getPetById"]["applications"][0]["email"]).to eq("joe@yahoo.com")
       expect(result["data"]["getPetById"]["applications"][0]["description"]).to eq("#{application_1.description}")
-
       expect(result["data"]["getPetById"]["applications"][0]["name"]).to_not eq("Kim")
       expect(result["data"]["getPetById"]["applications"][0]["email"]).to_not eq("kim@gmail.com")
       expect(result["data"]["getPetById"]["applications"][0]["description"]).to_not eq("#{application_2.description}")
       expect(result["data"]["getPetById"]["name"]).to_not eq("Garfield")
+    end
+
+    it 'returns an empty array if there are not applications for the pet' do
+      pet_1 = Pet.create!(id: 1, name: "Clifford", gender: "M", age: 2, description: "Big Red Dog, likes kids", species: "dog", owner_story: "My owner is going into assisted living next month and he is worried about what will happen to me", owner_email: "old_dude@gmail.com", owner_name: "Virgil")
+
+      result = NotFurgottenSchema.execute(query).as_json
+
+      expect(result["data"]["getPetById"]["applications"]).to be_an(Array)
+      expect(result["data"]["getPetById"]["applications"]).to eq([])
     end
 
     def query
