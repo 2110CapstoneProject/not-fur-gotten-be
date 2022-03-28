@@ -1,10 +1,10 @@
 type Application {
   createdAt: ISO8601DateTime!
-  description: String
-  email: String
+  description: String!
+  email: String!
   id: ID!
-  name: String
-  petId: Int
+  name: String!
+  petId: Int!
   updatedAt: ISO8601DateTime!
 }
 
@@ -21,17 +21,17 @@ type Mutation {
 }
 
 type Pet {
-  age: Int
+  age: Int!
   applications: [Application!]!
   createdAt: ISO8601DateTime!
-  description: String
-  gender: String
+  description: String!
+  gender: String!
   id: ID!
-  name: String
-  ownerEmail: String
-  ownerName: String
+  name: String!
+  ownerEmail: String!
+  ownerName: String!
   ownerStory: String
-  species: String
+  species: String!
   updatedAt: ISO8601DateTime!
 }
 
