@@ -3,12 +3,12 @@
 module Types
   class PetType < Types::BaseObject
     field :id, ID, null: false
-    field :name, String
-    field :age, Integer
-    field :description, String
-    field :species, String
+    field :name, String, null: false
+    field :age, Integer, null: false
+    field :description, String, null: false
+    field :species, String, null: false
     field :owner_story, String
-    field :gender, String
+    field :gender, String, null: false
     field :owner_email, String
     field :owner_name, String
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
