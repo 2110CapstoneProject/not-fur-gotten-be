@@ -61,6 +61,18 @@ RSpec.describe Types::QueryType do
       expect(result["errors"][0]["message"]).to eq("Cannot return null for non-nullable field Pet.gender")
     end
 
+    it 'errors if pet species is nil' do
+      pet_1 = Pet.create!(id: 1, name: "Clifford", gender: "M", age: 2, description: "Big Red Dog, likes kids", owner_story: "My owner is going into assisted living next month and he is worried about what will happen to me", owner_email: "old_dude@gmail.com", owner_name: "Virgil")
+
+      result = NotFurgottenSchema.execute(query).as_json
+
+      expect(result["data"]).to be_nil
+      expect(result).to have_key("errors")
+      expect(result["errors"]).to be_an(Array)
+      expect(result["errors"][0]).to have_key("message")
+      expect(result["errors"][0]["message"]).to eq("Cannot return null for non-nullable field Pet.species")
+    end
+
     def query
        <<~GQL
        {
