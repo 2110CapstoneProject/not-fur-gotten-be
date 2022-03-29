@@ -2,31 +2,31 @@ module Types
   class QueryType < Types::BaseObject
     # include GraphQL::Types::Relay::HasNodeField
     # include GraphQL::Types::Relay::HasNodesField
-    field :pets, [Types::PetType], null: false
+    field :get_all_pets, [Types::PetType], null: false
 
-    def pets
+    def get_all_pets
       Pet.all
     end
 
-    field :pet, Types::PetType, null: false do
+    field :get_pet_by_id, Types::PetType, null: false do
       argument :id, ID, required: true
     end
 
-    def pet(id:)
+    def get_pet_by_id(id:)
       Pet.find(id)
     end
 
-    field :applications, [Types::ApplicationType], null: false
+    field :get_all_applications, [Types::ApplicationType], null: false
 
-    def applications
+    def get_all_applications
       Application.all
     end
 
-    field :application, Types::ApplicationType, null: false do
+    field :get_application_by_id, Types::ApplicationType, null: false do
       argument :id, ID, required: true
     end
 
-    def application(id:)
+    def get_application_by_id(id:)
       Application.find(id)
     end
   end
