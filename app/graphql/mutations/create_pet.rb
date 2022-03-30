@@ -10,4 +10,22 @@ class Pet::CreateApplication < Mutations::BaseMutation
   argument :created_at, DateTime, required: true
   argument :updated_at, DateTime, required: true
 
+  field :pet, Types::PetType, null: false
+  field :errors, [String], null: false
+
+  def resolve(name:, age:, description:, species:, owner_story:, gender:, owner_email:, owner_name:)
+    pet = Pet.new(name: name, age: age, description: description, species: species, owner_story: owner_story, gender: gender, owner_email: owner_email, owner_name: owner_name)
+    if (pet.save)
+      {
+        pet: pet
+        errors: []
+      }
+    else
+      {
+        pet: nil,
+        errors: pet.errors.full_message
+      }
+    end
+  end
+
 end
