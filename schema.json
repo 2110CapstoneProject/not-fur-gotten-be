@@ -227,7 +227,7 @@
               "deprecationReason": null
             },
             {
-              "name": "bigint",
+              "name": "petId",
               "description": null,
               "type": {
                 "kind": "NON_NULL",
