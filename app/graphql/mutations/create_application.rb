@@ -1,20 +1,19 @@
-class Mutation::CreateApplication < Mutations::BaseMutation
+class Mutations::CreateApplication < Mutations::BaseMutation
   argument :name, String, required: true
   argument :email, String, required: true
   argument :description, String, required: true
-  argument :created_at, DateTime, required: true
-  argument :updated_at, DateTime, required: true
-  argument :bigint, Integer, required: true
+  argument :pet_id, Integer, required: true
 
   field :application, Types::ApplicationType, null: false
   field :errors, [String], null: false
 
-  def resolve(name:, email:, description:, created_at:, updated_at:, big_int:)
-    application = Application.new(name: name, email: email, description: description, created_at: created_at, updated_at: updated_at, big_int: big_int)
+  def resolve(name:, email:, description:, pet_id:)
+    pet = Pet.find(pet_id)
+    application = Application.new(name: name, email: email, description: description, pet_id: pet.id)
 
-    if (application.save)
+    if application.save
       {
-        application: application
+        application: application,
         errors: []
       }
     else
