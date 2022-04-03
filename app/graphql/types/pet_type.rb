@@ -11,6 +11,7 @@ module Types
     field :gender, String, null: false
     field :owner_email, String, null: false
     field :owner_name, String, null: false
+    field :image, String
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
     field :applications, [Types::ApplicationType], null: false

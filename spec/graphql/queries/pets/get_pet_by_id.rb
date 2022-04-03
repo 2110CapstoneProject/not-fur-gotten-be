@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe Types::QueryType do
   describe 'display a pet' do
     it 'can query a single pet' do
-      pet_1 = Pet.create!(id: 1, name: "Clifford", gender: "M", age: 2, description: "Big Red Dog, likes kids", species: "dog", owner_story: "My owner is going into assisted living next month and he is worried about what will happen to me", owner_email: "old_dude@gmail.com", owner_name: "Virgil")
-      pet_2 = Pet.create!(id: 2, name: "Garfield", gender: "M", age: 6, description: "Fat orange cat", species: "cat", owner_story: "My owner is going into assisted living next month and he is worried about what will happen to me", owner_email: "old_dude@gmail.com", owner_name: "Virgil")
+      pet_1 = Pet.create!(id: 1, name: "Clifford", gender: "M", age: 2, description: "Big Red Dog, likes kids", species: "dog", owner_story: "My owner is going into assisted living next month and he is worried about what will happen to me", owner_email: "old_dude@gmail.com", owner_name: "Virgil", image: "")
+      pet_2 = Pet.create!(id: 2, name: "Garfield", gender: "M", age: 6, description: "Fat orange cat", species: "cat", owner_story: "My owner is going into assisted living next month and he is worried about what will happen to me", owner_email: "old_dude@gmail.com", owner_name: "Virgil", image: "")
       application_1 = Application.create!(name: "Joe", email:"joe@yahoo.com", description: "I have a large yard and like to go for hikes", pet_id: pet_1.id )
       application_2 = Application.create!(name: "Kim", email:"kim@gmail.com", description: "I love cats and live in an apartment", pet_id: pet_2.id )
 
@@ -29,7 +29,7 @@ RSpec.describe Types::QueryType do
     end
 
     it 'returns an empty array if there are not applications for the pet' do
-      pet_1 = Pet.create!(id: 1, name: "Clifford", gender: "M", age: 2, description: "Big Red Dog, likes kids", species: "dog", owner_story: "My owner is going into assisted living next month and he is worried about what will happen to me", owner_email: "old_dude@gmail.com", owner_name: "Virgil")
+      pet_1 = Pet.create!(id: 1, name: "Clifford", gender: "M", age: 2, description: "Big Red Dog, likes kids", species: "dog", owner_story: "My owner is going into assisted living next month and he is worried about what will happen to me", owner_email: "old_dude@gmail.com", owner_name: "Virgil", image: "")
 
       result = NotFurgottenSchema.execute(query).as_json
 
@@ -50,6 +50,7 @@ RSpec.describe Types::QueryType do
          ownerStory
          ownerName
          ownerEmail
+         image
          applications {
            name
            email

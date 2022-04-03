@@ -93,6 +93,7 @@ type Pet {
   description: String!
   gender: String!
   id: ID!
+  image: String
   name: String!
   ownerEmail: String!
   ownerName: String!
