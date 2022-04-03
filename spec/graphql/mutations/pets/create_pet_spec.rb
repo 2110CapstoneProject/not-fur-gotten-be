@@ -5,21 +5,91 @@ module Mutations
       describe ".resolve" do
         it 'creates a pet' do
           expect(Pet.count).to eq(0)
-          post '/graphql', params: {query: query}
+          post '/graphql', params: {query: all_fields_complete}
           expect(Pet.count).to eq(1)
+        end
+
+        it 'allows for owner_story to be optional' do
+          expect(Pet.count).to eq(0)
+          post '/graphql', params: {query: owner_story_null}
+          expect(Pet.count).to eq(1)
+        end
+
+        it 'errors if an attribute other than owner_story is null' do
+          expect(Pet.count).to eq(0)
+          post '/graphql', params: {query: name_null}
+          expect(Pet.count).to eq(0)
         end
       end
 
-      def query
+      def all_fields_complete
           <<~GQL
           mutation {
             createPet(input: {
-              name: "Boots",
+              name: "Burt",
               age: 3,
               gender: "M",
               description: "black lab",
               species: "dog",
-              ownerStory: "My owner has to go to a nursing home next month.",
+              ownerStory: "I have to go to assisted living",
+              ownerEmail: "person@gmail.com",
+              ownerName: "Owner's Name"
+              }) {
+                pet {
+                  id,
+                  name,
+                  gender,
+                  description,
+                  species,
+                  ownerStory,
+                  ownerEmail,
+                  ownerName
+                }
+              errors
+              }
+            }
+          GQL
+      end
+
+      def owner_story_null
+          <<~GQL
+          mutation {
+            createPet(input: {
+              name: "Burt",
+              age: 3,
+              gender: "M",
+              description: "black lab",
+              species: "dog",
+              ownerStory: null,
+              ownerEmail: "person@gmail.com",
+              ownerName: "Owner's Name"
+              }) {
+                pet {
+                  id,
+                  name,
+                  gender,
+                  description,
+                  species,
+                  ownerStory,
+                  ownerEmail,
+                  ownerName
+                }
+              errors
+              }
+            }
+          GQL
+      end
+
+      def name_null
+          <<~GQL
+          mutation {
+            createPet(input: {
+              name: null,
+              age: 3,
+              gender: "M",
+              description: "black lab",
+              species: "dog",
+              ownerStory: "I have to go to assisted living",
               ownerEmail: "person@gmail.com",
               ownerName: "Owner's Name"
               }) {
