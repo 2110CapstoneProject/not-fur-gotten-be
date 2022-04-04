@@ -414,7 +414,7 @@ mutation {
 
 
 ## Further Project Information
- - [Turing Project Details](https://backend.turing.edu/module3/projects/consultancy/)
- - [Heroku Base URL](https://consultancy-be.herokuapp.com/) (Must add on the rest of the url to see example JSON)
- - [Frontend Heroku Market Map Repo](https://github.com/Turing-MarketMap/market-map-fe)
+ - [Turing Project Details](https://mod4.turing.edu/projects/capstone/expectations.html)
+ - [Heroku Base URL](https://not-fur-gotten-be.herokuapp.com/) 
+ - [Frontend Heroku Repo](https://github.com/Turing-MarketMap/market-map-fe)
 
