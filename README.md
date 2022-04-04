@@ -39,6 +39,9 @@ $ rails rake db:{drop,create,migrate,seed}
 
 ## Database Schema
 
+![not-fur-gotten-schema](https://user-images.githubusercontent.com/20864043/161596829-700b8e0d-2a25-45d6-a501-6fa5df6d8613.png)
+
+Our application is based on a one to many relationship between pets and applications - each pet can have many applications. We chose to include original owner user information in the pet. New adoptive owner information is included in the application. 
 
 ## Internal API Endpoints
 
