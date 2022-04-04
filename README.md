@@ -1,10 +1,11 @@
-# MarketMap: A Turing 2110 BE Mod 3 Consultancy Project
+# Not Fur-gotten - a Turing Capstone project
 
 ## Background & Description:
-
+"Not Fur-gotten" is a group project created over the course of 14 days by members of the Turing School of Software and Design. It is designed to allow pet owners to find new owners for pets that they are unable to care for any longer. Pet owners can post their pets on Not Fur-Gotten with a description and some information about the pet, and then pet adopters can post applications for the pets. Eventually, the owner can select a new owner for their pet from all the applicants. 
 
 ## Backend Features
-- Exposing internal APIs for Market Map's Frontend.
+- Build out database
+- Utilize GraphQL to create an endpoint for 
 - Import simulated db with a CSV file (could also be replaced by consuming a third party API)
 - Implement CircleCI
 - Build a project with Service Oriented Architecture (SOA)
