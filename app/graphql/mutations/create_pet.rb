@@ -1,29 +1,23 @@
 class Mutations::CreatePet < Mutations::BaseMutation
-  argument :name, String, required: true
-  argument :age, Integer, required: true
-  argument :description, String, required: true
-  argument :species, String, required: true
-  argument :gender, String, required: true
+  argument :name, String, required: false
+  argument :age, Integer, required: false
+  argument :description, String, required: false
+  argument :species, String, required: false
+  argument :gender, String, required: false
   argument :owner_story, String, required: false
-  argument :owner_email, String, required: true
-  argument :owner_name, String, required: true
+  argument :owner_email, String, required: false
+  argument :owner_name, String, required: false
 
-  field :pet, Types::PetType, null: false
+  field :pet, Types::PetType
   field :errors, [String], null: false
 
   def resolve(name:, age:, description:, species:, owner_story:, gender:, owner_email:, owner_name:)
     pet = Pet.new(name: name, age: age, description: description, species: species, owner_story: owner_story, gender: gender, owner_email: owner_email, owner_name: owner_name)
-    
+
     if pet.save
-      {
-        pet: pet,
-        errors: []
-      }
+      { pet: pet, errors: [] }
     else
-      {
-        pet: nil,
-        errors: pet.errors.full_message
-      }
+      { pet: nil, errors: pet.errors.full_messages }
     end
   end
 
