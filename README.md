@@ -5,11 +5,8 @@
 
 ## Backend Features
 - Build out database
-- Utilize GraphQL to create an endpoint for 
-- Import simulated db with a CSV file (could also be replaced by consuming a third party API)
-- Implement CircleCI
-- Build a project with Service Oriented Architecture (SOA)
-- Train and deploy a series of ANN regressors that predict the expected price of a specific car model.
+- Utilize GraphQL to create endpoint, queries, and mutations for front end team to access and modify database
+- Implement Github Actions for CI/CD
 
 ## Requirements and Setup (for Mac):
 ### Ruby and Rails
@@ -17,14 +14,22 @@
 - Rails -V 5.2.6
 
 ### Gems Utilized
+- rack-cors 
+- graphql
+- graphiql-rails
 - rspec
 - pry
 - simplecov
+- capybara
+- launchy 
+- orderly
+- shoulda-matchers 
+- faker 
 
 ### Setup
 1. Fork and/or Clone this Repo from GitHub.
 2. In your terminal use `$ git clone <ssh or https path>`
-3. Change into the cloned directory using `$ cd _________`
+3. Change into the cloned directory using `$ cd not-fur-gotten-be`
 4. Install the gem packages using `$ bundle install`
 5. Database Migrations can be setup by running:
 ```shell
