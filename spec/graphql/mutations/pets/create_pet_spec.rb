@@ -9,6 +9,13 @@ module Mutations
           expect(Pet.count).to eq(1)
         end
 
+        it 'capitalizes species, gender' do
+          expect(Pet.count).to eq(0)
+          post '/graphql', params: {query: all_fields_complete}
+          expect(Pet.count).to eq(1)
+          expect(Pet.first.species).to eq('Dog')
+        end
+
         it 'allows for owner_story to be optional' do
           expect(Pet.count).to eq(0)
           post '/graphql', params: {query: owner_story_null}
