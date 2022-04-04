@@ -416,5 +416,5 @@ mutation {
 ## Further Project Information
  - [Turing Project Details](https://mod4.turing.edu/projects/capstone/expectations.html)
  - [Heroku Base URL](https://not-fur-gotten-be.herokuapp.com/) 
- - [Frontend Heroku Repo](https://github.com/Turing-MarketMap/market-map-fe)
+ - [Frontend Heroku Repo](https://not-fur-gotten-fe.herokuapp.com/application)
 
