@@ -41,6 +41,7 @@ module Mutations
               ownerStory: "I have to go to assisted living",
               ownerEmail: "person@gmail.com",
               ownerName: "Owner's Name"
+              image: "image_url"
               }) {
                 pet {
                   id,
@@ -50,7 +51,8 @@ module Mutations
                   species,
                   ownerStory,
                   ownerEmail,
-                  ownerName
+                  ownerName,
+                  image
                 }
               errors
               }
@@ -69,7 +71,8 @@ module Mutations
               species: "dog",
               ownerStory: null,
               ownerEmail: "person@gmail.com",
-              ownerName: "Owner's Name"
+              ownerName: "Owner's Name",
+              image: "image_url"
               }) {
                 pet {
                   id,
@@ -80,6 +83,7 @@ module Mutations
                   ownerStory,
                   ownerEmail,
                   ownerName
+                  image
                 }
               errors
               }
@@ -98,7 +102,8 @@ module Mutations
               species: "dog",
               ownerStory: "I have to go to assisted living",
               ownerEmail: "person@gmail.com",
-              ownerName: "Owner's Name"
+              ownerName: "Owner's Name",
+              image: "image_url"
               }) {
                 pet {
                   id,
@@ -109,6 +114,7 @@ module Mutations
                   ownerStory,
                   ownerEmail,
                   ownerName
+                  image
                 }
               errors
               }
