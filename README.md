@@ -426,3 +426,5 @@ mutation {
  - [Heroku Base URL](https://not-fur-gotten-be.herokuapp.com/) 
  - [Frontend Heroku Repo](https://not-fur-gotten-fe.herokuapp.com/application)
 
+
+## **Contributors** ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
