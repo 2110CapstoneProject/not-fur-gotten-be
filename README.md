@@ -1,5 +1,13 @@
 # Not Fur-gotten - a Turing Capstone project
 
+![languages](https://img.shields.io/github/languages/top/2110CapstoneProject/not-fur-gotten-be?color=red)
+![PRs](https://img.shields.io/github/issues-pr-closed/2110CapstoneProject/not-fur-gotten-be)
+![rspec](https://img.shields.io/gem/v/rspec?color=blue&label=rspec)
+![simplecov](https://img.shields.io/gem/v/simplecov?color=blue&label=simplecov) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/contributors-6-orange.svg?style=flat)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+
 ## Background & Description:
 "Not Fur-gotten" is a group project created over the course of 14 days by members of the Turing School of Software and Design. It is designed to allow pet owners to find new owners for pets that they are unable to care for any longer. Pet owners can post their pets on Not Fur-Gotten with a description and some information about the pet, and then pet adopters can post applications for the pets. Eventually, the owner can select a new owner for their pet from all the applicants. 
 
