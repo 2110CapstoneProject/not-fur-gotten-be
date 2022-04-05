@@ -47,6 +47,7 @@ input CreatePetInput {
   clientMutationId: String
   description: String
   gender: String
+  image: String
   name: String
   ownerEmail: String
   ownerName: String
