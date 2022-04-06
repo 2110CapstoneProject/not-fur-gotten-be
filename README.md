@@ -3,7 +3,7 @@
 ![languages](https://img.shields.io/github/languages/top/2110CapstoneProject/not-fur-gotten-be?color=red)
 ![PRs](https://img.shields.io/github/issues-pr-closed/2110CapstoneProject/not-fur-gotten-be)
 ![rspec](https://img.shields.io/gem/v/rspec?color=blue&label=rspec)
-![simplecov](https://img.shields.io/gem/v/simplecov?color=blue&label=simplecov)
+![simplecov](https://img.shields.io/gem/v/simplecov?color=blue&label=simplecov) 
 
 
 ## Background & Description:

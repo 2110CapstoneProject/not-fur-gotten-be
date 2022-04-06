@@ -1,8 +1,8 @@
 class Mutations::CreateApplication < Mutations::BaseMutation
-  argument :name, String, required: true
-  argument :email, String, required: true
-  argument :description, String, required: true
-  argument :pet_id, Integer, required: true
+  argument :name, String, required: false
+  argument :email, String, required: false
+  argument :description, String, required: false
+  argument :pet_id, Integer, required: false
 
   field :application, Types::ApplicationType, null: false
   field :errors, [String], null: false
@@ -16,10 +16,10 @@ class Mutations::CreateApplication < Mutations::BaseMutation
         application: application,
         errors: []
       }
+      
     else
        {
-         application: nil,
-         errors: application.errors.full_message
+         application: nil, errors: application.errors.full_messages
        }
     end
   end
