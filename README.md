@@ -3,11 +3,11 @@
 ![languages](https://img.shields.io/github/languages/top/2110CapstoneProject/not-fur-gotten-be?color=red)
 ![PRs](https://img.shields.io/github/issues-pr-closed/2110CapstoneProject/not-fur-gotten-be)
 ![rspec](https://img.shields.io/gem/v/rspec?color=blue&label=rspec)
-![simplecov](https://img.shields.io/gem/v/simplecov?color=blue&label=simplecov) 
+![simplecov](https://img.shields.io/gem/v/simplecov?color=blue&label=simplecov)
 
 
 ## Background & Description:
-"Not Fur-gotten" is a group project created over the course of 14 days by members of the Turing School of Software and Design. It is designed to allow pet owners to find new owners for pets that they are unable to care for any longer. Pet owners can post their pets on Not Fur-Gotten with a description and some information about the pet, and then pet adopters can post applications for the pets. Eventually, the owner can select a new owner for their pet from all the applicants. 
+"Not Fur-gotten" is a group project created over the course of 14 days by members of the Turing School of Software and Design. It is designed to allow pet owners to find new owners for pets that they are unable to care for any longer. Pet owners can post their pets on Not Fur-Gotten with a description and some information about the pet, and then pet adopters can post applications for the pets. Eventually, the owner can select a new owner for their pet from all the applicants.
 
 ## Backend Features
 - Build out database
@@ -20,17 +20,17 @@
 - Rails -V 5.2.6
 
 ### Gems Utilized
-- rack-cors 
+- rack-cors
 - graphql
 - graphiql-rails
 - rspec
 - pry
 - simplecov
 - capybara
-- launchy 
+- launchy
 - orderly
-- shoulda-matchers 
-- faker 
+- shoulda-matchers
+- faker
 
 ### Setup
 1. Fork and/or Clone this Repo from GitHub.
@@ -47,7 +47,7 @@ $ rails rake db:{drop,create,migrate,seed}
 
 ![not-fur-gotten-schema](https://user-images.githubusercontent.com/20864043/161596829-700b8e0d-2a25-45d6-a501-6fa5df6d8613.png)
 
-Our application is based on a one to many relationship between pets and applications - each pet can have many applications. We chose to include original owner user information in the pet. New adoptive owner information is included in the application. 
+Our application is based on a one to many relationship between pets and applications - each pet can have many applications. We chose to include original owner user information in the pet. New adoptive owner information is included in the application.
 
 ## Endpoint/JSON Contract
 
@@ -77,6 +77,7 @@ This application supports the following Graphql queries:
     ownerStory
     ownerEmail
     ownerName
+    image
     applications {
       name
       email
@@ -102,6 +103,7 @@ This application supports the following Graphql queries:
                 "ownerStory": "My owner is going into assisted living next month and he is worried about what will happen to me",
                 "ownerEmail": "old_dude@gmail.com",
                 "ownerName": "Virgil",
+                "image": "https://images.unsplash.com/photo-1585559700398-1385b3a8aeb6?ixlib=rb-1.2.1&ixid=MnwxM[…]G90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
                 "applications": [
                     {
                         "name": "Joe",
@@ -120,6 +122,7 @@ This application supports the following Graphql queries:
                 "ownerStory": "My owner is going into assisted living next month and he is worried about what will happen to me",
                 "ownerEmail": "old_dude@gmail.com",
                 "ownerName": "Virgil",
+                "https://images.unsplash.com/photo-1536590158209-e9d615d525e4?ixlib=rb-1.2.1&ixid=MnwxM[…]G90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
                 "applications": [
                     {
                         "name": "Kim",
@@ -143,6 +146,7 @@ This application supports the following Graphql queries:
                 "ownerStory": "My owner is terminally ill with cancer and only has about 6 months to find me a home",
                 "ownerEmail": "lady@gmail.com",
                 "ownerName": "Ethel",
+                "https://images.unsplash.com/photo-1582797493098-23d8d0cc6769?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjE2fHxncmF5JTIwdGFiYnklMjBjYXR8ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
                 "applications": [
                     {
                         "name": "Harold",
@@ -173,6 +177,7 @@ This application supports the following Graphql queries:
     ownerStory
     ownerEmail
     ownerName
+    image
     applications {
       name
       email
@@ -197,6 +202,7 @@ This application supports the following Graphql queries:
             "ownerStory": "My owner is going into assisted living next month and he is worried about what will happen to me",
             "ownerEmail": "old_dude@gmail.com",
             "ownerName": "Virgil",
+            "image": "https://images.unsplash.com/photo-1585559700398-1385b3a8aeb6?ixlib=rb-1.2.1&ixid=MnwxM[…]G90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
             "applications": [
                 {
                     "name": "Joe",
@@ -223,7 +229,8 @@ mutation {
     species: "cat",
     ownerStory: "My owner has to go to assisted living very soon and cannot take me, she really worries where I end up",
     ownerEmail: "Dorothy27@yahoo.com",
-    ownerName: "Dorothy"
+    ownerName: "Dorothy",
+    "image": "https://images.unsplash.com/photo-1585559700398-1385b3a8b6?ixlib=rb-1.2.1&ixid=MnwxM[…]G90by1wYWdlfHx8fGVuB8fHx8&auto=format&fit=crop&w=774&q=80",
     }) {
       pet {
         id,
@@ -234,6 +241,7 @@ mutation {
         ownerStory,
         ownerEmail,
         ownerName
+        image
       }
     errors
     }
@@ -254,7 +262,8 @@ mutation {
                 "species": "cat",
                 "ownerStory": "My owner has to go to assisted living very soon and cannot take me, she really worries where I end up",
                 "ownerEmail": "Dorothy27@yahoo.com",
-                "ownerName": "Dorothy"
+                "ownerName": "Dorothy",
+                "image": "https://images.unsplash.com/photo-1585559700398-1385b3a8b6?ixlib=rb-1.2.1&ixid=MnwxM[…]G90by1wYWdlfHx8fGVuB8fHx8&auto=format&fit=crop&w=774&q=80",
             },
             "errors": []
         }
@@ -274,7 +283,8 @@ mutation {
     species: "cat",
     ownerStory: "My owner has to go to assisted living very soon and cannot take me, she really worries where I end up",
     ownerEmail: "Dorothy27@yahoo.com",
-    ownerName: "Dorothy"
+    ownerName: "Dorothy",
+    "image": "https://images.unsplash.com/photo-1585559700398-1385b3a8b6?ixlib=rb-1.2.1&ixid=MnwxM[…]G90by1wYWdlfHx8fGVuB8fHx8&auto=format&fit=crop&w=774&q=80",
     }) {
       pet {
         id,
@@ -285,6 +295,7 @@ mutation {
         ownerStory,
         ownerEmail,
         ownerName
+        image
       }
     errors
     }
@@ -421,6 +432,5 @@ mutation {
 
 ## Further Project Information
  - [Turing Project Details](https://mod4.turing.edu/projects/capstone/expectations.html)
- - [Heroku Base URL](https://not-fur-gotten-be.herokuapp.com/) 
+ - [Heroku Base URL](https://not-fur-gotten-be.herokuapp.com/)
  - [Frontend Heroku Repo](https://not-fur-gotten-fe.herokuapp.com/application)
-
