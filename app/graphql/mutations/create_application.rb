@@ -16,6 +16,7 @@ class Mutations::CreateApplication < Mutations::BaseMutation
         application: application,
         errors: []
       }
+      
     else
        {
          application: nil, errors: application.errors.full_messages
