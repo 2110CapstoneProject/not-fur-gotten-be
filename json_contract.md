@@ -26,6 +26,7 @@ This application supports the following Graphql queries:
     ownerStory
     ownerEmail
     ownerName
+    image
     applications {
       name
       email
@@ -51,6 +52,7 @@ This application supports the following Graphql queries:
                 "ownerStory": "My owner is going into assisted living next month and he is worried about what will happen to me",
                 "ownerEmail": "old_dude@gmail.com",
                 "ownerName": "Virgil",
+                "image": "https://images.unsplash.com/photo-1585559700398-1385b3a8aeb6?ixlib=rb-1.2.1&ixid=MnwxM[…]G90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
                 "applications": [
                     {
                         "name": "Joe",
@@ -69,6 +71,7 @@ This application supports the following Graphql queries:
                 "ownerStory": "My owner is going into assisted living next month and he is worried about what will happen to me",
                 "ownerEmail": "old_dude@gmail.com",
                 "ownerName": "Virgil",
+                "image": "https://images.unsplash.com/photo-1536590158209-e9d615d525e4?ixlib=rb-1.2.1&ixid=MnwxM[…]G90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
                 "applications": [
                     {
                         "name": "Kim",
@@ -92,6 +95,7 @@ This application supports the following Graphql queries:
                 "ownerStory": "My owner is terminally ill with cancer and only has about 6 months to find me a home",
                 "ownerEmail": "lady@gmail.com",
                 "ownerName": "Ethel",
+                "image":  "https://images.unsplash.com/photo-1582797493098-23d8d0cc6769?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjE2fHxncmF5JTIwdGFiYnklMjBjYXR8ZW58MHwxfDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
                 "applications": [
                     {
                         "name": "Harold",
@@ -122,6 +126,7 @@ This application supports the following Graphql queries:
     ownerStory
     ownerEmail
     ownerName
+    image
     applications {
       name
       email
@@ -146,6 +151,7 @@ This application supports the following Graphql queries:
             "ownerStory": "My owner is going into assisted living next month and he is worried about what will happen to me",
             "ownerEmail": "old_dude@gmail.com",
             "ownerName": "Virgil",
+            "image": "https://images.unsplash.com/photo-1585559700398-1385b3a8aeb6?ixlib=rb-1.2.1&ixid=MnwxM[…]G90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
             "applications": [
                 {
                     "name": "Joe",
@@ -172,7 +178,8 @@ mutation {
     species: "cat",
     ownerStory: "My owner has to go to assisted living very soon and cannot take me, she really worries where I end up",
     ownerEmail: "Dorothy27@yahoo.com",
-    ownerName: "Dorothy"
+    ownerName: "Dorothy",
+    "image": "https://images.unsplash.com/photo-1585559700398-1385b3a8aeb6?ixlib=rb-1.2.1&ixid=MnwxM[…]G90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
     }) {
       pet {
         id,
@@ -183,6 +190,7 @@ mutation {
         ownerStory,
         ownerEmail,
         ownerName
+        image
       }
     errors
     }
@@ -203,7 +211,8 @@ mutation {
                 "species": "cat",
                 "ownerStory": "My owner has to go to assisted living very soon and cannot take me, she really worries where I end up",
                 "ownerEmail": "Dorothy27@yahoo.com",
-                "ownerName": "Dorothy"
+                "ownerName": "Dorothy",
+                "image": "https://images.unsplash.com/photo-1585559700398-1385b3a8aeb6?ixlib=rb-1.2.1&ixid=MnwxM[…]G90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
             },
             "errors": []
         }
@@ -223,7 +232,8 @@ mutation {
     species: "cat",
     ownerStory: "My owner has to go to assisted living very soon and cannot take me, she really worries where I end up",
     ownerEmail: "Dorothy27@yahoo.com",
-    ownerName: "Dorothy"
+    ownerName: "Dorothy",
+    "image": "https://images.unsplash.com/photo-1585559700398-1385b3a8aeb6?ixlib=rb-1.2.1&ixid=MnwxM[…]G90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
     }) {
       pet {
         id,
@@ -234,6 +244,7 @@ mutation {
         ownerStory,
         ownerEmail,
         ownerName
+        image
       }
     errors
     }
