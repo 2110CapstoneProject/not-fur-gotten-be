@@ -456,7 +456,7 @@ mutation {
 
 ##### Backend Team
 Link to the Backend Repository [here](https://github.com/2110CapstoneProject/not-fur-gotten-be)
-- Kerri Hoffman: 
+- Kerri Hoffmann: 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kerri-hoffmann/) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kbhoffmann)
 - Karan Mehta: 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/karan-mehta-2b706093/) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/karanm645)
