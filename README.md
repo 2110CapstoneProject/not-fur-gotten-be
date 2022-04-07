@@ -3,7 +3,8 @@
 ![languages](https://img.shields.io/github/languages/top/2110CapstoneProject/not-fur-gotten-be?color=red)
 ![PRs](https://img.shields.io/github/issues-pr-closed/2110CapstoneProject/not-fur-gotten-be)
 ![rspec](https://img.shields.io/gem/v/rspec?color=blue&label=rspec)
-![simplecov](https://img.shields.io/gem/v/simplecov?color=blue&label=simplecov) 
+![simplecov](https://img.shields.io/gem/v/simplecov?color=purple&label=simplecov) 
+![graphql](https://img.shields.io/gem/v/graphql?color=green&label=graphql) 
 
 
 ## Background & Description:
@@ -45,7 +46,8 @@ $ rails rake db:{drop,create,migrate,seed}
 
 ## Database Schema
 
-![not-fur-gotten-schema](https://user-images.githubusercontent.com/20864043/161596829-700b8e0d-2a25-45d6-a501-6fa5df6d8613.png)
+![not-fur-gotten-schema](![image (1)](https://user-images.githubusercontent.com/84674761/162245529-c2a62192-2c5b-4d6e-b828-e56dda64b2df.png)
+
 
 Our application is based on a one to many relationship between pets and applications - each pet can have many applications. We chose to include original owner user information in the pet. New adoptive owner information is included in the application.
 
