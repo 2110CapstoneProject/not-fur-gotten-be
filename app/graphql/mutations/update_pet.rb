@@ -13,17 +13,15 @@ class Mutations::UpdatePet < Mutations::BaseMutation
   field :pet, Types::PetType
   field :errors, [String], null: false
 
-  def resolve(id:, name:, age:, description:, species:, owner_story:, gender:, owner_email:, owner_name:, image:)
-    pet = Pet.find(id)
-    pet.update(name: name, age: age, description: description, species: species.capitalize,
-      owner_story: owner_story, gender: gender.capitalize, owner_email: owner_email,
-      owner_name: owner_name, image: image)
-      
+  def resolve(attributes)
+    pet = Pet.find(attributes[:id])
+    attributes[:species] = attributes[:species].capitalize
+    attributes[:gender] = attributes[:gender].capitalize
+    pet.update(attributes)
     if pet.save
       { pet: pet, errors: [] }
     else
       { pet: nil, errors: pet.errors.full_messages }
     end
   end
-
 end
