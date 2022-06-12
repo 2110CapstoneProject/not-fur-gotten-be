@@ -15,7 +15,10 @@ class Mutations::UpdatePet < Mutations::BaseMutation
 
   def resolve(id:, name:, age:, description:, species:, owner_story:, gender:, owner_email:, owner_name:, image:)
     pet = Pet.find(id)
-    pet.update(name: name, age: age, description: description, species: species.capitalize, owner_story: owner_story, gender: gender.capitalize, owner_email: owner_email, owner_name: owner_name, image: image)
+    pet.update(name: name, age: age, description: description, species: species.capitalize,
+      owner_story: owner_story, gender: gender.capitalize, owner_email: owner_email,
+      owner_name: owner_name, image: image)
+      
     if pet.save
       { pet: pet, errors: [] }
     else
