@@ -58,7 +58,7 @@ module Mutations
                 id: "#{@pet_1.id}"
                 name: "Burt",
                 age: 3,
-                gender: "M",
+                gender: "m",
                 description: "dark gray DSH",
                 species: "cat",
                 ownerStory: "Updated story",
