@@ -1,4 +1,5 @@
-class Mutations::CreatePet < Mutations::BaseMutation
+class Mutations::UpdatePet < Mutations::BaseMutation
+  argument :id, ID, required: true
   argument :name, String, required: false
   argument :age, Integer, required: false
   argument :description, String, required: false
@@ -12,10 +13,12 @@ class Mutations::CreatePet < Mutations::BaseMutation
   field :pet, Types::PetType
   field :errors, [String], null: false
 
-  def resolve(attributes)
-    attributes[:species] = attributes[:species].capitalize
-    attributes[:gender] = attributes[:gender].capitalize
-    pet = Pet.new(attributes)
+  def resolve(id:, name:, age:, description:, species:, owner_story:, gender:, owner_email:, owner_name:, image:)
+    pet = Pet.find(id)
+    pet.update(name: name, age: age, description: description, species: species.capitalize,
+      owner_story: owner_story, gender: gender.capitalize, owner_email: owner_email,
+      owner_name: owner_name, image: image)
+      
     if pet.save
       { pet: pet, errors: [] }
     else

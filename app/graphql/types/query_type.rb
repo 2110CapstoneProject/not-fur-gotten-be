@@ -1,7 +1,5 @@
 module Types
   class QueryType < Types::BaseObject
-    # include GraphQL::Types::Relay::HasNodeField
-    # include GraphQL::Types::Relay::HasNodesField
     field :get_all_pets, [Types::PetType], null: false
 
     def get_all_pets
