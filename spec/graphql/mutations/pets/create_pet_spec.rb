@@ -37,7 +37,7 @@ module Mutations
               age: 3,
               gender: "M",
               description: "black lab",
-              species: "dog",
+              species: "doG",
               ownerStory: "I have to go to assisted living",
               ownerEmail: "person@gmail.com",
               ownerName: "Owner's Name"
