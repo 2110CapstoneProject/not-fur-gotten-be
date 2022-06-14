@@ -4,7 +4,7 @@ class Mutations::CreateApplication < Mutations::BaseMutation
   argument :description, String, required: false
   argument :pet_id, Integer, required: false
 
-  field :application, Types::ApplicationType, null: false
+  field :application, Types::ApplicationType
   field :errors, [String], null: false
 
   def resolve(attributes)
