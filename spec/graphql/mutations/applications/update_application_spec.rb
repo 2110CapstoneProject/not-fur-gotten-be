@@ -12,6 +12,37 @@ module Mutations
             email: "kerri@yahoo.com", description: "I love all animals")
 
           post '/graphql', params: {query: query}
+
+          application_data = JSON.parse(response.body)["data"]["updateApplication"]["application"]
+
+          expect(application_data["id"]).to eq(@application.id.to_s)
+          expect(application_data["name"]).to eq("Brooke")
+          expect(application_data["email"]).to eq("brooke@gmail.com")
+          expect(application_data["description"]).to eq("I love all types of animals.")
+          expect(application_data["petId"]).to eq(@pet.id)
+        end
+
+        def name_null
+            <<~GQL
+            mutation {
+              updateApplication(input: {
+                id: #{@application.id}
+                name: null,
+                email: null,
+                description: null,
+                petId: #{pet_2.id}
+                }) {
+                  application {
+                    id,
+                    name,
+                    email,
+                    description
+                    petId
+                  }
+                errors
+                }
+              }
+            GQL
         end
       end
 
@@ -40,8 +71,3 @@ module Mutations
         end
     end
   end
-
-
-
-
-  
