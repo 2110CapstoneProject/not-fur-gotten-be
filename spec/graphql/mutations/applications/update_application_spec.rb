@@ -22,15 +22,30 @@ module Mutations
           expect(application_data["petId"]).to eq(@pet.id)
         end
 
-        def name_null
+        it 'errors if attributes are null' do
+          @pet_2 = Pet.create!(name: "Burton", age: 7, gender: "F",
+            description: "white long hair", species: "dog", owner_story: "original story",
+            owner_email: "original@email.com", owner_name: "Wrong Name",
+            image: "original_image_string")
+          @application_2 = Application.create!(pet_id: @pet_2.id, name: "Kerri",
+            email: "kerri@yahoo.com", description: "I love all animals")
+
+          post '/graphql', params: { query: attributes_null }
+
+          errors = JSON.parse(response.body)["data"][updateApplication]["errors"]
+
+          # expect().to eq()
+        end
+
+        def attributes_null
             <<~GQL
             mutation {
               updateApplication(input: {
-                id: #{@application.id}
+                id: #{@application_2.id}
                 name: null,
                 email: null,
                 description: null,
-                petId: #{pet_2.id}
+                petId: #{@pet_2.id}
                 }) {
                   application {
                     id,
@@ -47,7 +62,6 @@ module Mutations
       end
 
       def query
-        pet = Pet.create!(name: "Clifford", gender: "M", age: 2, description: "Big Red Dog, likes kids", species: "dog", owner_story: "My owner is going into assisted living next month and he is worried about what will happen to me", owner_email: "old_dude@gmail.com", owner_name: "Virgil")
           <<~GQL
           mutation {
             updateApplication(input: {
