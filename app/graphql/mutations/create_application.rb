@@ -4,23 +4,17 @@ class Mutations::CreateApplication < Mutations::BaseMutation
   argument :description, String, required: false
   argument :pet_id, Integer, required: false
 
-  field :application, Types::ApplicationType, null: false
+  field :application, Types::ApplicationType
   field :errors, [String], null: false
 
-  def resolve(name:, email:, description:, pet_id:)
-    pet = Pet.find(pet_id)
-    application = Application.new(name: name, email: email, description: description, pet_id: pet.id)
-
+  def resolve(attributes)
+    pet = Pet.find(attributes[:pet_id])
+    attributes[:pet_id] = pet.id
+    application = Application.new(attributes)
     if application.save
-      {
-        application: application,
-        errors: []
-      }
-      
+      { application: application, errors: [] }
     else
-       {
-         application: nil, errors: application.errors.full_messages
-       }
+       { application: nil, errors: application.errors.full_messages }
     end
   end
 end
