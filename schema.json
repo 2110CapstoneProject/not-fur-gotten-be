@@ -1141,13 +1141,9 @@
               "name": "application",
               "description": null,
               "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "Application",
-                  "ofType": null
-                }
+                "kind": "OBJECT",
+                "name": "Application",
+                "ofType": null
               },
               "isDeprecated": false,
               "deprecationReason": null,
