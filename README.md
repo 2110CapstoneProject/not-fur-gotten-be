@@ -470,4 +470,3 @@ Link to the Backend Repository [here](https://github.com/2110CapstoneProject/not
  - [Heroku Base URL](https://not-fur-gotten-be.herokuapp.com/)
  - [Frontend Heroku Repo](https://not-fur-gotten-fe.herokuapp.com/)
 
-#### [BACK TO THE TOP!](#not-furgotten)
