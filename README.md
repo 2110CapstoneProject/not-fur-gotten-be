@@ -1,4 +1,5 @@
-# Not Fur-gotten - a Turing Capstone project
+<img width="700" alt="Screen Shot 2022-06-26 at 10 42 38" src="https://user-images.githubusercontent.com/84674761/175824819-84fac06e-a7d0-4144-a3dc-594f46f326ee.png">
+
 
 ![languages](https://img.shields.io/github/languages/top/2110CapstoneProject/not-fur-gotten-be?color=red)
 ![PRs](https://img.shields.io/github/issues-pr-closed/2110CapstoneProject/not-fur-gotten-be)
@@ -6,34 +7,33 @@
 ![simplecov](https://img.shields.io/gem/v/simplecov?color=purple&label=simplecov) 
 ![graphql](https://img.shields.io/gem/v/graphql?color=green&label=graphql) 
 
+## Table of Contents 
+ 
+[Project Description](#project-description) <br> 
+[Backend Features](#backend-features) <br> 
+[System Requirements](#system-requirements) <br> 
+[Gems Utilized](#gems-utilized) <br> 
+[Technologies Used](#technologies-used) <br> 
+[Setup](#setup) <br> 
+[Database Schema](#database-schema) <br> 
+[API Endpoints](#api-endpoints) <br> 
+[Authors](#authors) <br> 
+[Additional Project Information](#additional-project-information) <br> 
 
-## Background & Description:
+## Project Description
 "Not Fur-gotten" is a group project created over the course of 14 days by members of the Turing School of Software and Design. It is designed to allow pet owners to find new owners for pets that they are unable to care for any longer. Pet owners can post their pets on Not Fur-Gotten with a description and some information about the pet, and then pet adopters can post applications for the pets. Eventually, the owner can select a new owner for their pet from all the applicants.
 
 ## Backend Features
-- Build out database
-- Utilize GraphQL to create endpoint, queries, and mutations for front end team to access and modify database
+- PostgreSQL Database for Pets and Applications tables
+- Utilize GraphQL to create endpoints for queries and mutations of Pets and Applications tables
 - Implement Github Actions for CI/CD
 
-## Requirements and Setup (for Mac):
+## System Requirements
 ### Ruby and Rails
 - Ruby -V 2.7.2
 - Rails -V 5.2.6
 
-### Gems Utilized
-- rack-cors
-- graphql
-- graphiql-rails
-- rspec
-- pry
-- simplecov
-- capybara
-- launchy
-- orderly
-- shoulda-matchers
-- faker
-
-### TECHNOLOGIES USED 
+## Technologies Used
 ![Ruby on Rails](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
 ![Atom](https://img.shields.io/badge/Atom-%2366595C.svg?style=for-the-badge&logo=atom&logoColor=white)
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
@@ -45,8 +45,17 @@
 ![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 ![GraphQL](https://img.shields.io/badge/GraphQl-E10098?style=for-the-badge&logo=graphql&logoColor=white)
 
-### Setup
-1. Fork and/or Clone this Repo from GitHub.
+## Gems Utilized
+- rack-cors
+- graphql
+- graphiql-rails
+- rspec
+- pry
+- simplecov
+- shoulda-matchers
+
+## Setup
+1. Fork and clone this Repo from GitHub.
 2. In your terminal use `$ git clone <ssh or https path>`
 3. Change into the cloned directory using `$ cd not-fur-gotten-be`
 4. Install the gem packages using `$ bundle install`
@@ -55,15 +64,13 @@
 $ rails rake db:{drop,create,migrate,seed}
 ```
 
-
 ## Database Schema
 
-![not-fur-gotten-schema](![image (1)](https://user-images.githubusercontent.com/84674761/162245529-c2a62192-2c5b-4d6e-b828-e56dda64b2df.png)
-
+![DB schema](https://user-images.githubusercontent.com/84674761/162245529-c2a62192-2c5b-4d6e-b828-e56dda64b2df.png)
 
 Our application is based on a one to many relationship between pets and applications - each pet can have many applications. We chose to include original owner user information in the pet. New adoptive owner information is included in the application.
 
-## Endpoint/JSON Contract
+## API Endpoints
 
 All queries are made using a single GraphQL endpoint:
 
@@ -464,9 +471,12 @@ Link to the Backend Repository [here](https://github.com/2110CapstoneProject/not
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/croix-kimmel/) [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/croixk)
 
 
+## Additional Project Information
+ - [Turing Project Expectations](https://mod4.turing.edu/projects/capstone/expectations.html)
+ - [Live Heroku site](https://not-fur-gotten-fe.herokuapp.com/)
+ - [Frontend Github Repo](https://github.com/2110CapstoneProject/not-fur-gotten-fe)
 
-## Further Project Information
- - [Turing Project Details](https://mod4.turing.edu/projects/capstone/expectations.html)
- - [Heroku Base URL](https://not-fur-gotten-be.herokuapp.com/)
- - [Frontend Heroku Repo](https://not-fur-gotten-fe.herokuapp.com/)
+[Back to top](#table-of-contents)
+
+
 
